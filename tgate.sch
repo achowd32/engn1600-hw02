@@ -14,6 +14,10 @@ N 40 60 130 60 {lab=out}
 N 130 30 130 60 {lab=out}
 N -120 -0 -90 0 {lab=cbar}
 N 170 0 200 0 {lab=c}
+N -50 -0 -30 -0 {lab=VDD}
+N -30 -20 -30 -0 {lab=VDD}
+N 90 0 130 -0 {lab=GND}
+N 90 0 90 30 {lab=GND}
 C {symbols/pfet_03v3.sym} -70 0 0 0 {name=M1
 L=0.28u
 W=0.22u
@@ -46,3 +50,5 @@ C {ipin.sym} 40 -60 1 0 {name=p1 lab=in}
 C {opin.sym} 40 60 1 0 {name=p2 lab=out}
 C {ipin.sym} -120 0 0 0 {name=p3 lab=cbar}
 C {ipin.sym} 200 0 2 0 {name=p4 lab=c}
+C {vdd.sym} -30 -20 0 0 {name=l1 lab=VDD}
+C {gnd.sym} 90 30 0 0 {name=l2 lab=GND}
