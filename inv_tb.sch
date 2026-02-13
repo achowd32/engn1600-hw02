@@ -15,9 +15,9 @@ N 381.5625 13.75 381.5625 52.5 {lab=vss}
 N 320 -20 320 15 {lab=IN}
 N 320 -21.25 340 -21.25 {lab=IN}
 N 320 75 320 110 {lab=GND}
-N 490 -21.875 490 30 {lab=vout}
-N 490 90 490 120 {lab=GND}
-N 442.5 -21.875 490 -21.875 {lab=vout}
+N 491.25 -21.25 491.25 30.625 {lab=OUT}
+N 491.25 90 491.25 120 {lab=GND}
+N 443.75 -21.25 491.25 -21.25 {lab=OUT}
 N 30 -70 30 -66.25 {lab=vdd}
 N 320 -21.25 320 -20 {lab=IN}
 C {vsource.sym} 30 10 0 0 {name=V1 value=3.3 savecurrent=false}
@@ -30,12 +30,12 @@ C {lab_wire.sym} 130 -85 3 0 {name=p3 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 381.5625 52.5 3 0 {name=p4 sig_type=std_logic lab=vss}
 C {vsource.sym} 320 45 0 0 {name=V3 value=3.3 savecurrent=false}
 C {gnd.sym} 320 110 0 0 {name=l4 lab=GND}
-C {capa.sym} 490 60 0 0 {name=C1
+C {capa.sym} 491.25 60 0 0 {name=C1
 m=1
 value=10f
 footprint=1206
 device="ceramic capacitor"}
-C {gnd.sym} 490 120 0 0 {name=l5 lab=GND}
+C {gnd.sym} 491.25 120 0 0 {name=l5 lab=GND}
 C {INV.sym} 450 -1.25 0 0 {name=x1}
 C {devices/code_shown.sym} 360 -290 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
@@ -71,4 +71,4 @@ write inv_tb.raw
 .endc
 "}
 C {lab_wire.sym} 329.375 -21.25 0 0 {name=p5 sig_type=std_logic lab=IN}
-C {lab_wire.sym} 490 15 0 0 {name=p6 sig_type=std_logic lab=OUT}
+C {lab_wire.sym} 491.25 -0.625 0 0 {name=p6 sig_type=std_logic lab=OUT}

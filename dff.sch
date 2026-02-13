@@ -30,14 +30,10 @@ N -10 -235 -10 -185 {lab=cbar}
 N -10 -130 -10 -92.5 {lab=c}
 N 478.75 -211.25 478.75 -182.5 {lab=cbar}
 N 480 -112.5 480 -71.25 {lab=c}
-N -490 180 -490 240 {lab=GND}
-N -390 180 -390 240 {lab=GND}
-N -490 70 -490 120 {lab=vdd}
-N -390 70 -390 120 {lab=vss}
 N -70 97.5 -70 157.5 {lab=vdd}
 N -69.6875 230 -69.6875 300 {lab=vss}
 N 210.3125 230 210.3125 300 {lab=vss}
-N 101.5625 35 101.5625 105 {lab=vss}
+N 101.5625 35.625 101.5625 105.625 {lab=vss}
 N 101.25 -95.9375 101.25 -35.9375 {lab=vdd}
 N 781.5625 160 781.5625 230 {lab=vss}
 N 927.8125 159.375 927.8125 229.375 {lab=vss}
@@ -46,14 +42,10 @@ N 781.25 74.0625 781.25 87.5 {lab=vdd}
 N 210 98.125 210 158.125 {lab=vdd}
 N 781.25 -84.6875 781.25 -24.6875 {lab=vdd}
 N 927.5 27.8125 927.5 87.8125 {lab=vdd}
-N 842.5 10 1017.5 10 {lab=Q}
-N 1017.5 10 1087.5 10 {lab=Q}
+N 843.75 10 1018.75 10 {lab=Q}
+N 1018.75 10 1088.75 10 {lab=Q}
 N 990 123.75 1030 123.75 {lab=Qb}
-N 1030 123.75 1030 192.5 {lab=Qb}
-N 1030 251.25 1030 288.75 {lab=GND}
 N 1087.5 10 1195 10 {lab=Q}
-N 1195 10 1195 145 {lab=Q}
-N 1195 205 1195 267.5 {lab=GND}
 N 513.75 -137.5 513.75 -77.5 {lab=vdd}
 N 513.75 -190.3125 513.75 -167.5 {lab=vss}
 N 545 -89.0625 545 -29.0625 {lab=vdd}
@@ -82,6 +74,7 @@ N 271.25 -160.3125 271.25 -160 {lab=RSTn}
 N 423.75 -0 443.75 -0 {lab=#net6}
 N 443.75 -0 505 0 {lab=#net6}
 N 480 -113.125 480 -112.5 {lab=c}
+N 1030 123.75 1058.75 123.75 {lab=Qb}
 C {tgate.sym} 40 -130 0 0 {name=x1}
 C {tristate.sym} -60 80 0 0 {name=x2}
 C {nand2.sym} 171.25 -190 2 0 {name=x4}
@@ -98,18 +91,12 @@ C {inv.sym} -1.25 213.75 0 0 {name=x11}
 C {inv.sym} 278.75 213.75 0 0 {name=x12}
 C {lab_wire.sym} 58.75 193.75 0 0 {name=p3 sig_type=std_logic lab=cbar}
 C {lab_wire.sym} 318.75 193.75 0 0 {name=p4 sig_type=std_logic lab=c}
-C {lab_wire.sym} -125 60 0 0 {name=p5 sig_type=std_logic lab=cbar}
+C {lab_wire.sym} -125 60 2 0 {name=p5 sig_type=std_logic lab=cbar}
 C {lab_wire.sym} -126.25 -63.75 0 0 {name=p6 sig_type=std_logic lab=c}
 C {lab_wire.sym} -10 -228.75 0 0 {name=p7 sig_type=std_logic lab=cbar}
 C {lab_wire.sym} -10 -101.25 0 0 {name=p8 sig_type=std_logic lab=c}
 C {lab_wire.sym} 478.75 -205 0 0 {name=p9 sig_type=std_logic lab=cbar}
 C {lab_wire.sym} 480 -80 0 0 {name=p10 sig_type=std_logic lab=c}
-C {vsource.sym} -490 150 0 0 {name=V1 value=3.3 savecurrent=false}
-C {vsource.sym} -390 150 0 0 {name=V2 value=0 savecurrent=false}
-C {gnd.sym} -490 240 0 0 {name=l1 lab=GND}
-C {gnd.sym} -390 240 0 0 {name=l2 lab=GND}
-C {lab_wire.sym} -390 80 0 0 {name=p11 sig_type=std_logic lab=vss}
-C {lab_wire.sym} -490 80 0 0 {name=p12 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} -70 120 0 0 {name=p13 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} -69.6875 270 0 0 {name=p14 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 210.3125 270 0 0 {name=p15 sig_type=std_logic lab=vss}
@@ -122,20 +109,6 @@ C {lab_wire.sym} 781.25 81.875 0 0 {name=p21 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} 210 120.625 0 0 {name=p22 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} 781.25 -62.1875 0 0 {name=p23 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} 927.5 73.125 0 0 {name=p24 sig_type=std_logic lab=vdd}
-C {capa.sym} 1030 222.5 0 0 {name=C1
-m=1
-value=10f
-footprint=1206
-device="ceramic capacitor"}
-C {gnd.sym} 1030 287.5 0 0 {name=l3 lab=GND}
-C {lab_wire.sym} 1026.25 123.75 0 0 {name=p25 sig_type=std_logic lab=Qb}
-C {capa.sym} 1195 175 0 0 {name=C2
-m=1
-value=10f
-footprint=1206
-device="ceramic capacitor"}
-C {gnd.sym} 1195 267.5 0 0 {name=l4 lab=GND}
-C {lab_wire.sym} 1183.75 10 0 0 {name=p26 sig_type=std_logic lab=Q}
 C {lab_wire.sym} 513.75 -93.4375 0 0 {name=p27 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} 513.75 -187.1875 0 0 {name=p28 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 545 -43.125 0 0 {name=p29 sig_type=std_logic lab=vdd}
@@ -143,7 +116,11 @@ C {lab_wire.sym} 545 70 0 0 {name=p30 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 231.25 -221.875 0 0 {name=p31 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 231.25 -67.8125 0 0 {name=p32 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} -160 -50 0 0 {name=p35 sig_type=std_logic lab=vdd}
-C {lab_wire.sym} -160 41.875 0 0 {name=p36 sig_type=std_logic lab=vss}
+C {lab_wire.sym} -160 48.75 0 0 {name=p36 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 373.75 -59.6875 0 0 {name=p37 sig_type=std_logic lab=cbar}
 C {lab_wire.sym} 373.75 47.5 0 0 {name=p38 sig_type=std_logic lab=c}
 C {ipin.sym} 271.25 -253.75 1 0 {name=p33 lab=RSTn}
+C {opin.sym} 1058.75 123.75 0 0 {name=p11 lab=Qb}
+C {opin.sym} 1195 10 0 0 {name=p12 lab=Q}
+C {iopin.sym} -160 -75 3 0 {name=p25 lab=vdd}
+C {iopin.sym} -160 75 1 0 {name=p26 lab=vss}

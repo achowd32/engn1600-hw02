@@ -7,45 +7,45 @@ E {}
 N 30 40 30 70 {lab=GND}
 N 30 -70 30 -20 {lab=vdd}
 N 30 -80 30 -70 {lab=vdd}
-N 370 -140 370 -70 {lab=vdd}
+N 373.125 -110 373.125 -40 {lab=vdd}
 N 130 35 130 65 {lab=GND}
 N 130 -75 130 -25 {lab=vss}
 N 130 -85 130 -75 {lab=vss}
-N 376.25 65 376.25 100 {lab=vss}
-N 280 15 280 50 {lab=IN1}
-N 280 13.75 300 13.75 {lab=IN1}
-N 225 -23.75 225 -20 {lab=IN0}
-N 225 -23.75 300 -23.75 {lab=IN0}
-N 225 40 225 140 {lab=GND}
-N 280 110 280 145 {lab=GND}
-N 510 -0 510 50 {lab=OUT}
-N 510 110 510 140 {lab=GND}
-N 465 -1.25 510 -1.25 {lab=OUT}
-N 280 50 280 52.5 {lab=IN1}
-N 280 13.75 280 15 {lab=IN1}
-N 300 13.75 302.5 13.75 {lab=IN1}
-N 300 -23.75 302.5 -23.75 {lab=IN0}
-N 510 -1.25 510 0 {lab=OUT}
-N 461.71875 -1.25 465 -1.25 {lab=OUT}
+N 373.125 39.375 373.125 74.375 {lab=vss}
+N 310.625 11.25 310.625 46.25 {lab=IN1}
+N 310.625 10 330.625 10 {lab=IN1}
+N 255.625 -10 255.625 -6.25 {lab=IN0}
+N 255.625 -10 330.625 -10 {lab=IN0}
+N 255.625 53.75 255.625 153.75 {lab=GND}
+N 310.625 106.25 310.625 141.25 {lab=GND}
+N 476.25 1.25 476.25 51.25 {lab=OUT}
+N 476.25 111.25 476.25 141.25 {lab=GND}
+N 431.25 0 476.25 0 {lab=OUT}
+N 310.625 46.25 310.625 48.75 {lab=IN1}
+N 310.625 10 310.625 11.25 {lab=IN1}
+N 330.625 10 333.125 10 {lab=IN1}
+N 330.625 -10 333.125 -10 {lab=IN0}
+N 476.25 0 476.25 1.25 {lab=OUT}
+N 430.625 0 431.25 0 {lab=OUT}
 C {vsource.sym} 30 10 0 0 {name=V1 value=3.3 savecurrent=false}
 C {gnd.sym} 30 70 0 0 {name=l1 lab=GND}
 C {lab_wire.sym} 30 -80 3 0 {name=p1 sig_type=std_logic lab=vdd}
-C {lab_wire.sym} 370 -140 3 0 {name=p2 sig_type=std_logic lab=vdd}
+C {lab_wire.sym} 373.125 -103.75 3 0 {name=p2 sig_type=std_logic lab=vdd}
 C {vsource.sym} 130 5 0 0 {name=V2 value=0 savecurrent=false}
 C {gnd.sym} 130 65 0 0 {name=l2 lab=GND}
 C {lab_wire.sym} 130 -85 3 0 {name=p3 sig_type=std_logic lab=vss}
-C {lab_wire.sym} 376.25 100 3 0 {name=p4 sig_type=std_logic lab=vss}
-C {vsource.sym} 280 80 0 0 {name=V3 value=3.3 savecurrent=false}
-C {vsource.sym} 225 10 0 0 {name=V4 value=3.3 savecurrent=false}
-C {gnd.sym} 225 140 0 0 {name=l3 lab=GND}
-C {gnd.sym} 280 145 0 0 {name=l4 lab=GND}
-C {capa.sym} 510 80 0 0 {name=C1
+C {lab_wire.sym} 373.125 61.25 3 0 {name=p4 sig_type=std_logic lab=vss}
+C {vsource.sym} 310.625 76.25 0 0 {name=V3 value=3.3 savecurrent=false}
+C {vsource.sym} 255.625 23.75 0 0 {name=V4 value=3.3 savecurrent=false}
+C {gnd.sym} 255.625 153.75 0 0 {name=l3 lab=GND}
+C {gnd.sym} 310.625 141.25 0 0 {name=l4 lab=GND}
+C {capa.sym} 476.25 81.25 0 0 {name=C1
 m=1
 value=10f
 footprint=1206
 device="ceramic capacitor"}
-C {gnd.sym} 510 140 0 0 {name=l5 lab=GND}
-C {NAND2.sym} 390 -5 0 0 {name=x1}
+C {gnd.sym} 476.25 141.25 0 0 {name=l5 lab=GND}
+C {NAND2.sym} 433.125 40 0 0 {name=x1}
 C {devices/code_shown.sym} 380 -240 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
@@ -87,6 +87,6 @@ tran $&tstep $&tstop
 write nand_tb.raw
 .endc
 "}
-C {lab_wire.sym} 260 -23.75 0 0 {name=p5 sig_type=std_logic lab=IN0}
-C {lab_wire.sym} 293.75 13.75 0 0 {name=p6 sig_type=std_logic lab=IN1}
-C {lab_wire.sym} 498.75 -1.25 0 0 {name=p7 sig_type=std_logic lab=OUT}
+C {lab_wire.sym} 290.625 -10 0 0 {name=p5 sig_type=std_logic lab=IN0}
+C {lab_wire.sym} 324.375 10 0 0 {name=p6 sig_type=std_logic lab=IN1}
+C {lab_wire.sym} 476.25 8.75 2 0 {name=p7 sig_type=std_logic lab=OUT}
