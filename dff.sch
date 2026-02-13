@@ -4,28 +4,25 @@ K {}
 V {}
 S {}
 E {}
-N -90 -0 60 0 {lab=#net1}
-N -80 -150 -60 -150 {lab=#net1}
-N -80 -150 -80 -0 {lab=#net1}
-N 40 -150 173.75 -150 {lab=#net2}
-N 163.75 -0 271.25 -0 {lab=#net3}
-N 271.25 -140 271.25 -0 {lab=#net3}
-N 271.25 -0 323.75 0 {lab=#net3}
-N 602.5 -148.75 602.5 10 {lab=#net4}
-N 513.75 -152.5 602.5 -152.5 {lab=#net4}
-N 602.5 -152.5 602.5 -148.75 {lab=#net4}
-N 602.5 10 741.25 10 {lab=#net4}
-N 696.25 10 696.25 122.5 {lab=#net4}
-N 696.25 123.75 740 123.75 {lab=#net4}
-N 696.25 122.5 696.25 123.75 {lab=#net4}
-N 843.75 123.75 886.25 123.75 {lab=#net5}
-N -210 -0 -160 -0 {lab=D}
+N -90 -0 60 0 {lab=Dn}
+N -80 -150 -60 -150 {lab=Dn}
+N -80 -150 -80 -0 {lab=Dn}
+N 40 -150 173.75 -150 {lab=#net1}
+N 163.75 -0 271.25 -0 {lab=#net2}
+N 271.25 -140 271.25 -0 {lab=#net2}
+N 271.25 -0 323.75 0 {lab=#net2}
+N 602.5 -148.75 602.5 10 {lab=#net3}
+N 513.75 -152.5 602.5 -152.5 {lab=#net3}
+N 602.5 -152.5 602.5 -148.75 {lab=#net3}
+N 602.5 10 741.25 10 {lab=#net3}
+N 696.25 10 696.25 122.5 {lab=#net3}
+N 696.25 123.75 740 123.75 {lab=#net3}
+N 696.25 122.5 696.25 123.75 {lab=#net3}
+N 843.75 123.75 886.25 123.75 {lab=#net4}
 N -211.25 193.75 -111.25 193.75 {lab=CLK}
 N -6.25 193.75 168.75 193.75 {lab=cbar}
 N -7.5 193.75 -6.25 193.75 {lab=cbar}
 N 268.75 193.75 328.75 193.75 {lab=c}
-N -125 30 -125 80 {lab=cbar}
-N -126.25 -78.75 -126.25 -38.75 {lab=c}
 N -10 -235 -10 -185 {lab=cbar}
 N -10 -130 -10 -92.5 {lab=c}
 N 478.75 -211.25 478.75 -182.5 {lab=cbar}
@@ -54,11 +51,9 @@ N 231.25 -249.375 231.25 -189.375 {lab=vss}
 N 231.25 -111.25 231.25 -51.25 {lab=vdd}
 N 271.25 -233.4375 271.25 -160.3125 {lab=RSTn}
 N 505 20 505 93.125 {lab=RSTn}
-N 443.75 -152.5 443.75 -126.875 {lab=#net6}
-N 443.75 -128.125 443.75 -0.3125 {lab=#net6}
-N -160 15 -160 75 {lab=vss}
-N -160 -75 -160 -15 {lab=vdd}
-N 373.75 -64.0625 373.75 -35.3125 {lab=cbar}
+N 443.75 -152.5 443.75 -126.875 {lab=#net5}
+N 443.75 -128.125 443.75 -0.3125 {lab=#net5}
+N 373.75 -63.75 373.75 -35 {lab=cbar}
 N 373.75 20 373.75 61.25 {lab=c}
 N 271.25 -254.375 271.25 -233.4375 {lab=RSTn}
 N 920 -230 1370 -230 {lab=RSTn}
@@ -69,31 +64,37 @@ N 505 387.5 505 390 {lab=RSTn}
 N 505 390 530 390 {lab=RSTn}
 N 445 -230 920 -230 {lab=RSTn}
 N 271.25 -230 445 -230 {lab=RSTn}
-N 443.75 -0.625 443.75 -0 {lab=#net6}
+N 443.75 -0.625 443.75 -0 {lab=#net5}
 N 271.25 -160.3125 271.25 -160 {lab=RSTn}
-N 423.75 -0 443.75 -0 {lab=#net6}
-N 443.75 -0 505 0 {lab=#net6}
+N 423.75 -0 443.75 -0 {lab=#net5}
+N 443.75 -0 505 0 {lab=#net5}
 N 480 -113.125 480 -112.5 {lab=c}
 N 1030 123.75 1058.75 123.75 {lab=Qb}
-C {tgate.sym} 40 -130 0 0 {name=x1}
-C {tristate.sym} -60 80 0 0 {name=x2}
+N -25 -239.6875 -25 -179.6875 {lab=vdd}
+N -25 -120.625 -25 -50.625 {lab=vss}
+N 358.75 29.375 358.75 52.1875 {lab=vss}
+N 358.75 -89.6875 358.75 -29.6875 {lab=vdd}
+N -237.5 0 -187.5 0 {lab=D}
+N -152.5 30 -152.5 80 {lab=cbar}
+N -153.75 -78.75 -153.75 -38.75 {lab=c}
+N -187.5 15 -187.5 75 {lab=vss}
+N -187.5 -75 -187.5 -15 {lab=vdd}
+N -117.5 -0 -90 -0 {lab=Dn}
+C {tgate.sym} 40 -60 0 0 {name=x1}
 C {nand2.sym} 171.25 -190 2 0 {name=x4}
 C {inv.sym} 170 20 0 0 {name=x3}
-C {tgate.sym} 423.75 20 0 0 {name=x5}
+C {tgate.sym} 423.75 90 0 0 {name=x5}
 C {nand2.sym} 605 50 0 0 {name=x6}
 C {tristate.sym} 413.75 -232.5 2 0 {name=x7}
 C {inv.sym} 850 30 0 0 {name=x8}
 C {inv.sym} 850 143.75 0 0 {name=x9}
 C {inv.sym} 996.25 143.75 0 0 {name=x10}
-C {ipin.sym} -210 0 0 0 {name=p1 lab=D}
 C {ipin.sym} -211.25 193.75 0 0 {name=p2 lab=CLK}
 C {inv.sym} -1.25 213.75 0 0 {name=x11}
 C {inv.sym} 278.75 213.75 0 0 {name=x12}
 C {lab_wire.sym} 58.75 193.75 0 0 {name=p3 sig_type=std_logic lab=cbar}
 C {lab_wire.sym} 318.75 193.75 0 0 {name=p4 sig_type=std_logic lab=c}
-C {lab_wire.sym} -125 60 2 0 {name=p5 sig_type=std_logic lab=cbar}
-C {lab_wire.sym} -126.25 -63.75 0 0 {name=p6 sig_type=std_logic lab=c}
-C {lab_wire.sym} -10 -228.75 0 0 {name=p7 sig_type=std_logic lab=cbar}
+C {lab_wire.sym} -10 -225 1 0 {name=p7 sig_type=std_logic lab=cbar}
 C {lab_wire.sym} -10 -101.25 0 0 {name=p8 sig_type=std_logic lab=c}
 C {lab_wire.sym} 478.75 -205 0 0 {name=p9 sig_type=std_logic lab=cbar}
 C {lab_wire.sym} 480 -80 0 0 {name=p10 sig_type=std_logic lab=c}
@@ -115,12 +116,21 @@ C {lab_wire.sym} 545 -43.125 0 0 {name=p29 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} 545 70 0 0 {name=p30 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 231.25 -221.875 0 0 {name=p31 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 231.25 -67.8125 0 0 {name=p32 sig_type=std_logic lab=vdd}
-C {lab_wire.sym} -160 -50 0 0 {name=p35 sig_type=std_logic lab=vdd}
-C {lab_wire.sym} -160 48.75 0 0 {name=p36 sig_type=std_logic lab=vss}
-C {lab_wire.sym} 373.75 -59.6875 0 0 {name=p37 sig_type=std_logic lab=cbar}
+C {lab_wire.sym} 373.75 -60.3125 1 0 {name=p37 sig_type=std_logic lab=cbar}
 C {lab_wire.sym} 373.75 47.5 0 0 {name=p38 sig_type=std_logic lab=c}
 C {ipin.sym} 271.25 -253.75 1 0 {name=p33 lab=RSTn}
 C {opin.sym} 1058.75 123.75 0 0 {name=p11 lab=Qb}
 C {opin.sym} 1195 10 0 0 {name=p12 lab=Q}
-C {iopin.sym} -160 -75 3 0 {name=p25 lab=vdd}
-C {iopin.sym} -160 75 1 0 {name=p26 lab=vss}
+C {lab_wire.sym} -25 -233.4375 3 0 {name=p34 sig_type=std_logic lab=vdd}
+C {lab_wire.sym} -25 -80.9375 3 0 {name=p39 sig_type=std_logic lab=vss}
+C {lab_wire.sym} 358.75 50 0 0 {name=p40 sig_type=std_logic lab=vss}
+C {lab_wire.sym} 358.75 -87.8125 3 0 {name=p41 sig_type=std_logic lab=vdd}
+C {tristate.sym} -87.5 80 0 0 {name=x13}
+C {ipin.sym} -237.5 0 0 0 {name=p42 lab=D}
+C {lab_wire.sym} -152.5 60 2 0 {name=p43 sig_type=std_logic lab=cbar}
+C {lab_wire.sym} -153.75 -63.75 0 0 {name=p44 sig_type=std_logic lab=c}
+C {lab_wire.sym} -187.5 -50 0 0 {name=p45 sig_type=std_logic lab=vdd}
+C {lab_wire.sym} -187.5 48.75 0 0 {name=p46 sig_type=std_logic lab=vss}
+C {iopin.sym} -187.5 -75 3 0 {name=p47 lab=vdd}
+C {iopin.sym} -187.5 75 1 0 {name=p48 lab=vss}
+C {lab_wire.sym} -25 0 0 0 {name=p1 sig_type=std_logic lab=Dn}

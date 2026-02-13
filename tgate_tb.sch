@@ -32,10 +32,13 @@ N -229.375 388.125 -229.375 405.3125 {lab=GND}
 N -229.375 405.3125 -229.375 405.625 {lab=GND}
 N 340 -21.875 342.5 -21.875 {lab=IN}
 N 320 -21.875 320 -21.25 {lab=IN}
+N 377.5 7.5 377.5 77.5 {lab=vss}
+N 377.5 -86.875 377.5 -64.375 {lab=vdd}
+N 377.5 -64.375 377.5 -50 {lab=vdd}
 C {vsource.sym} 30 10 0 0 {name=V1 value=3.3 savecurrent=false}
 C {gnd.sym} 30 70 0 0 {name=l1 lab=GND}
 C {lab_wire.sym} 30 -80 3 0 {name=p1 sig_type=std_logic lab=vdd}
-C {lab_wire.sym} 392.5 -129.375 3 0 {name=p2 sig_type=std_logic lab=cbar}
+C {lab_wire.sym} 392.5 -100.625 1 0 {name=p2 sig_type=std_logic lab=cbar}
 C {vsource.sym} 130 5 0 0 {name=V2 value=0 savecurrent=false}
 C {gnd.sym} 130 65 0 0 {name=l2 lab=GND}
 C {lab_wire.sym} 130 -85 3 0 {name=p3 sig_type=std_logic lab=vss}
@@ -90,7 +93,7 @@ write inv_tb.raw
 "}
 C {lab_wire.sym} 329.375 -21.875 0 0 {name=p5 sig_type=std_logic lab=IN}
 C {lab_wire.sym} 490 15 0 0 {name=p6 sig_type=std_logic lab=OUT}
-C {tgate.sym} 442.5 -1.875 0 0 {name=x1}
+C {tgate.sym} 442.5 68.125 0 0 {name=x1}
 C {inv.sym} -19.375 348.4375 0 0 {name=x11}
 C {inv.sym} 260.625 348.4375 0 0 {name=x12}
 C {lab_wire.sym} 40.625 328.4375 0 0 {name=p8 sig_type=std_logic lab=cbar}
@@ -101,3 +104,5 @@ C {lab_wire.sym} 192.1875 404.6875 0 0 {name=p15 sig_type=std_logic lab=vss}
 C {lab_wire.sym} 191.875 255.3125 0 0 {name=p22 sig_type=std_logic lab=vdd}
 C {vsource.sym} -229.375 358.4375 0 0 {name=V4 value=3.3 savecurrent=false}
 C {gnd.sym} -229.375 405.625 0 0 {name=l3 lab=GND}
+C {lab_wire.sym} 377.5 73.4375 3 0 {name=p7 sig_type=std_logic lab=vss}
+C {lab_wire.sym} 377.5 -86.875 0 0 {name=p10 sig_type=std_logic lab=vdd}
