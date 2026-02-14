@@ -36,7 +36,7 @@ N 80 30 120 30 {lab=vss}
 N 120 30 120 120 {lab=vss}
 C {symbols/nfet_03v3.sym} 60 120 0 0 {name=M1
 L=0.28u
-W=1u
+W=0.42u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -50,7 +50,7 @@ spiceprefix=X
 }
 C {symbols/pfet_03v3.sym} 0 -60 0 0 {name=M3
 L=0.28u
-W=1u
+W=0.42u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -64,7 +64,7 @@ spiceprefix=X
 }
 C {symbols/pfet_03v3.sym} 160 -60 0 0 {name=M4
 L=0.28u
-W=1u
+W=0.42u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -83,7 +83,7 @@ C {iopin.sym} 80 -170 3 0 {name=p4 lab=vdd}
 C {iopin.sym} 80 170 1 0 {name=p5 lab=vss}
 C {symbols/nfet_03v3.sym} 60 30 0 0 {name=M2
 L=0.28u
-W=1u
+W=0.42u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"

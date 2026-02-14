@@ -1,0 +1,6 @@
+** sch_path: /foss/designs/CAD2/inv.sch
+.subckt inv vdd IN OUT vss
+*.PININFO IN:I OUT:O vdd:B vss:B
+M1 OUT IN vss vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M2 OUT IN vdd vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends
