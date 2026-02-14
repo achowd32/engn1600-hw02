@@ -1,0 +1,8 @@
+** sch_path: /foss/designs/CAD2/tristate.sch
+.subckt tristate vdd c out in cbar vss
+*.PININFO in:I out:O vdd:B vss:B c:I cbar:I
+M1 net1 c vdd vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M2 out in net1 vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M3 out in net2 vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M4 net2 cbar vss vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends

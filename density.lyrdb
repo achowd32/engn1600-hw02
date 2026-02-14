@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
  <description>GF180 DENSITY DRC Run Report at</description>
- <original-file>/foss/designs/CAD2/tgate.gds</original-file>
+ <original-file>/foss/designs/CAD2/tristate.gds</original-file>
  <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/macros/gf180mcu_drc.lydrc'</generator>
- <top-cell>TGATE</top-cell>
+ <top-cell>tristate</top-cell>
  <tags>
  </tags>
  <categories>
@@ -65,7 +65,7 @@
  </categories>
  <cells>
   <cell>
-   <name>TGATE</name>
+   <name>tristate</name>
    <variant/>
    <layout-name/>
    <references>
@@ -76,97 +76,121 @@
   <item>
    <tags/>
    <category>'PL.8'</category>
-   <cell>TGATE</cell>
+   <cell>tristate</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.18,-2.43;-0.18,-1.41;-0.22,-1.41;-0.22,-1.05;0.14,-1.05;0.14,-1.41;0.1,-1.41;0.1,-2.43)</value>
+    <value>polygon: (0.935,-4.27;0.935,-3.25;0.895,-3.25;0.895,-2.89;1.255,-2.89;1.255,-3.25;1.215,-3.25;1.215,-4.27)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'PL.8'</category>
-   <cell>TGATE</cell>
+   <cell>tristate</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.18,-0.24;-0.18,0.78;-0.23,0.78;-0.23,1.16;0.15,1.16;0.15,0.78;0.1,0.78;0.1,-0.24)</value>
+    <value>polygon: (0.135,-4.27;0.135,-3.25;0.095,-3.25;0.095,-2.89;0.13,-2.89;0.13,-1.12;0.08,-1.12;0.08,-0.74;0.46,-0.74;0.46,-1.12;0.41,-1.12;0.41,-2.89;0.455,-2.89;0.455,-3.25;0.415,-3.25;0.415,-4.27)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'PL.8'</category>
+   <cell>tristate</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (0.93,-2.14;0.93,-1.12;0.88,-1.12;0.88,-0.74;1.26,-0.74;1.26,-1.12;1.21,-1.12;1.21,-2.14)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>TGATE</cell>
+   <cell>tristate</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.02,-2.11;1.02,-1.73;1.4,-1.73;1.4,-2.11)</value>
+    <value>polygon: (1.425,-3.95;1.425,-3.57;2.515,-3.57;2.515,-3.95)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>TGATE</cell>
+   <cell>tristate</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.23,-1.42;-0.23,-1.04;0.15,-1.04;0.15,-1.42)</value>
+    <value>polygon: (0.085,-3.26;0.085,-2.88;0.465,-2.88;0.465,-3.26)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>TGATE</cell>
+   <cell>tristate</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.895,-2.11;-0.895,0.455;-0.79,0.455;-0.79,0.46;-0.41,0.46;-0.41,0.08;-0.635,0.08;-0.635,-1.73;-0.39,-1.73;-0.39,-2.11)</value>
+    <value>polygon: (0.885,-3.26;0.885,-2.88;1.265,-2.88;1.265,-3.26)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>TGATE</cell>
+   <cell>tristate</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (0.31,-2.11;0.31,-1.73;0.47,-1.73;0.47,0.08;0.33,0.08;0.33,0.46;0.71,0.46;0.71,-2.11)</value>
+    <value>polygon: (-0.645,-3.975;-0.645,-1.44;-0.1,-1.44;-0.1,-1.82;-0.305,-1.82;-0.305,-3.57;-0.075,-3.57;-0.075,-3.95;-0.305,-3.95;-0.305,-3.975)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>TGATE</cell>
+   <cell>tristate</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.06,0.08;1.06,0.46;1.44,0.46;1.44,0.08)</value>
+    <value>polygon: (1.44,-1.82;1.44,-1.44;2.55,-1.44;2.55,-1.82)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>TGATE</cell>
+   <cell>tristate</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.23,0.78;-0.23,1.16;0.15,1.16;0.15,0.78)</value>
+    <value>polygon: (0.08,-1.12;0.08,-0.74;0.46,-0.74;0.46,-1.12)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>'M1.4'</category>
+   <cell>tristate</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>polygon: (0.88,-1.12;0.88,-0.74;1.26,-0.74;1.26,-1.12)</value>
    </values>
   </item>
  </items>

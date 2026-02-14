@@ -1,0 +1,12 @@
+* Extracted by KLayout with GF180MCU LVS runset on : 14/02/2026 07:12
+
+.SUBCKT tristate vdd out vss in cbar c
+M$1 \$7 in out vdd pfet_03v3 L=0.28U W=0.42U AS=0.2822P AD=0.1092P PS=2.18U
++ PD=0.94U
+M$2 \$7 c vdd vdd pfet_03v3 L=0.28U W=0.42U AS=0.2822P AD=0.1092P PS=2.18U
++ PD=0.94U
+M$3 \$8 in out vss nfet_03v3 L=0.28U W=0.42U AS=0.2646P AD=0.1092P PS=2.1U
++ PD=0.94U
+M$4 \$8 cbar vss vss nfet_03v3 L=0.28U W=0.42U AS=0.2646P AD=0.1092P PS=2.1U
++ PD=0.94U
+.ENDS tristate
