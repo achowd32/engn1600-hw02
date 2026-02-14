@@ -20,7 +20,7 @@ N 90 0 130 -0 {lab=vss}
 N 90 0 90 30 {lab=vss}
 C {symbols/pfet_03v3.sym} -70 0 0 0 {name=M1
 L=0.28u
-W=1u
+W=0.42u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -34,7 +34,7 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 150 0 2 0 {name=M2
 L=0.28u
-W=1u
+W=0.42u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"

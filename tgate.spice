@@ -1,0 +1,6 @@
+** sch_path: /foss/designs/CAD2/tgate.sch
+.subckt tgate in vdd cbar c vss out
+*.PININFO in:I out:O cbar:I c:I vdd:B vss:B
+M1 out cbar in vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M2 out c in vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends
