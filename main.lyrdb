@@ -3983,41 +3983,5 @@
   </cell>
  </cells>
  <items>
-  <item>
-   <tags/>
-   <category>'NW.2b_LV'</category>
-   <cell>dff</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>edge-pair: (7.485,3.285;7.485,5.125)|(6.43,5.13;6.43,3.29)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'NW.2b_LV'</category>
-   <cell>dff</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>edge-pair: (-2.805,3.365;-2.805,5.205)|(-3.67,4.26;-3.67,2.42)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'NW.2b_LV'</category>
-   <cell>dff</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>edge-pair: (1.92,3.29;1.92,5.13)|(0.905,5.205;0.905,3.365)</value>
-   </values>
-  </item>
  </items>
 </report-database>

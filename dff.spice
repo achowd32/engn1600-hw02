@@ -1,0 +1,60 @@
+** sch_path: /foss/designs/CAD2/dff.sch
+.subckt dff RSTn D Q Qb CLK vdd vss
+*.PININFO CLK:I RSTn:I Qb:O Q:O D:I vdd:B vss:B
+x1 Dn vdd cbar c vss net1 tgate
+x4 vdd net1 net2 RSTn vss nand2
+x3 vdd Dn net2 vss inv
+x5 net2 vdd cbar c vss net5 tgate
+x6 vdd net3 net5 RSTn vss nand2
+x7 vdd c net5 net3 cbar vss tristate
+x8 vdd net3 Q vss inv
+x9 vdd net3 net4 vss inv
+x10 vdd net4 Qb vss inv
+x11 vdd CLK cbar vss inv
+x12 vdd cbar c vss inv
+x13 vdd c Dn D cbar vss tristate
+.ends
+
+* expanding   symbol:  tgate.sym # of pins=6
+** sym_path: /foss/designs/CAD2/tgate.sym
+** sch_path: /foss/designs/CAD2/tgate.sch
+.subckt tgate in vdd cbar c vss out
+*.PININFO in:I out:O cbar:I c:I vdd:B vss:B
+M1 out cbar in vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M2 out c in vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends
+
+
+* expanding   symbol:  nand2.sym # of pins=5
+** sym_path: /foss/designs/CAD2/nand2.sym
+** sch_path: /foss/designs/CAD2/nand2.sch
+.subckt nand2 vdd OUT IN0 IN1 vss
+*.PININFO IN0:I IN1:I OUT:O vdd:B vss:B
+M1 net1 IN1 vss vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M3 OUT IN0 vdd vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M4 OUT IN1 vdd vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M2 OUT IN0 net1 vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends
+
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /foss/designs/CAD2/inv.sym
+** sch_path: /foss/designs/CAD2/inv.sch
+.subckt inv vdd IN OUT vss
+*.PININFO IN:I OUT:O vdd:B vss:B
+M1 OUT IN vss vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M2 OUT IN vdd vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends
+
+
+* expanding   symbol:  tristate.sym # of pins=6
+** sym_path: /foss/designs/CAD2/tristate.sym
+** sch_path: /foss/designs/CAD2/tristate.sch
+.subckt tristate vdd c out in cbar vss
+*.PININFO in:I out:O vdd:B vss:B c:I cbar:I
+M1 net1 c vdd vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M2 out in net1 vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M3 out in net2 vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M4 net2 cbar vss vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends
+
