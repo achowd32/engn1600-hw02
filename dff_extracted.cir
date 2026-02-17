@@ -1,4 +1,4 @@
-* Extracted by KLayout with GF180MCU LVS runset on : 16/02/2026 00:40
+* Extracted by KLayout with GF180MCU LVS runset on : 17/02/2026 04:26
 
 .SUBCKT dff VSS Q RSTN CLK VDD Qb D
 M$1 VDD \$1 \$17 VDD pfet_03v3 L=0.28U W=0.42U AS=0.2822P AD=0.2822P PS=2.18U

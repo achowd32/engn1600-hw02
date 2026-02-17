@@ -1,0 +1,373 @@
+v {xschem version=3.4.7 file_version=1.2}
+G {}
+K {}
+V {}
+S {}
+E {}
+N -697.5 43.125 -697.5 73.125 {lab=GND}
+N -621.25 44.375 -621.25 74.375 {lab=GND}
+N -621.25 -68.125 -621.25 -15.625 {lab=VSS}
+N -431.25 85 -431.25 120 {lab=GND}
+N -166.25 -34.375 -166.25 17.5 {lab=Q}
+N -166.25 77.5 -166.25 107.5 {lab=GND}
+N -697.5 -66.875 -697.5 -14.375 {lab=VDD}
+N -393.75 135.625 -393.75 152.8125 {lab=GND}
+N -323.75 -108.75 -323.75 -61.875 {lab=VDD}
+N -323.75 57.5 -323.75 96.875 {lab=VSS}
+N -243.75 -34.375 -166.25 -34.375 {lab=Q}
+N -243.75 117.5 -243.75 147.5 {lab=GND}
+N -393.75 8.125 -393.75 76.25 {lab=CLK}
+N -495.625 65 -495.625 100 {lab=GND}
+N -243.75 5.625 -243.75 58.125 {lab=Qb}
+N -431.25 -11.875 -393.75 -11.875 {lab=D}
+N -431.25 -11.875 -431.25 25 {lab=D}
+N -495.625 -31.875 -495.625 5 {lab=RSTn}
+N -495.625 -31.875 -393.125 -31.875 {lab=RSTn}
+C {vsource.sym} -697.5 13.125 0 0 {name=V1 value=3.3 savecurrent=false}
+C {gnd.sym} -697.5 73.125 0 0 {name=l1 lab=GND}
+C {lab_wire.sym} -697.5 -52.8125 3 0 {name=p1 sig_type=std_logic lab=VDD}
+C {vsource.sym} -621.25 14.375 0 0 {name=V2 value=0 savecurrent=false}
+C {gnd.sym} -621.25 74.375 0 0 {name=l2 lab=GND}
+C {lab_wire.sym} -621.25 -59.375 3 0 {name=p3 sig_type=std_logic lab=VSS}
+C {vsource.sym} -431.25 55 0 0 {name=V3 value=3.3 savecurrent=false}
+C {capa.sym} -166.25 47.5 0 0 {name=C1
+m=1
+value=25fF
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} -166.25 107.5 0 0 {name=l5 lab=GND}
+C {devices/code_shown.sym} -391.25 -280.625 0 0 {name=MODELS only_toplevel=true
+format="tcleval( @value )"
+value="
+.include $::180MCU_MODELS/design.ngspice
+.lib $::180MCU_MODELS/sm141064.ngspice typical
+"}
+C {code_shown.sym} 48.75 159.375 0 0 {name=s1 only_toplevel=false value="
+.subckt dff_flat VDD CLK RSTN VSS D Q Qb
+X0 a_n249_n4912# a_n1374_n6642# RSTN.t1 VSS.t9 nfet_03v3 ad=0.2646p pd=2.1u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X1 VSS.t25 a_n359_n5759.t3 Q.t0 VSS.t24 nfet_03v3 ad=0.2646p pd=2.1u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X2 a_n359_n5759.t1 a_n249_n4912# VDD.t14 VDD.t13 pfet_03v3 ad=0.1092p pd=0.94u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X3 VDD.t25 a_n89_n4912# a_881_n5758# VDD.t24 pfet_03v3 ad=0.2822p pd=2.18u as=0.1092p ps=0.94u w=0.42u l=0.28u
+X4 VDD.t9 a_n1374_n6642# a_1067_n6116# VDD.t8 pfet_03v3 ad=0.2822p pd=2.18u as=0.1092p ps=0.94u w=0.42u l=0.28u
+X5 a_2281_n4424# D.t0 a_1056_n4015# VSS.t12 nfet_03v3 ad=0.1092p pd=0.94u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X6 VSS.t11 CLK.t0 a_n1342_n5730# VSS.t10 nfet_03v3 ad=0.2646p pd=2.1u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X7 a_2280_n3998# D.t1 a_1056_n4015# VDD.t12 pfet_03v3 ad=0.1092p pd=0.94u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X8 VDD.t11 CLK.t1 a_n1342_n5730# VDD.t10 pfet_03v3 ad=0.2822p pd=2.18u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X9 VSS.t7 a_n1342_n5730# a_n1374_n6642# VSS.t6 nfet_03v3 ad=0.2667p pd=2.11u as=0.2625p ps=2.09u w=0.42u l=0.28u
+X10 a_1059_n5756# RSTN.t4 a_881_n5758# VSS.t20 nfet_03v3 ad=0.1092p pd=0.94u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X11 VSS.t15 a_1056_n4015# RSTN.t3 VSS.t14 nfet_03v3 ad=0.2646p pd=2.1u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X12 VSS.t5 a_n1342_n5730# a_1068_n6542# VSS.t4 nfet_03v3 ad=0.2646p pd=2.1u as=0.1092p ps=0.94u w=0.42u l=0.28u
+X13 VSS.t1 a_n912_n3722# Qb.t1 VSS.t0 nfet_03v3 ad=0.2646p pd=2.1u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X14 VSS.t19 a_n89_n4912# a_n181_n5757# VSS.t18 nfet_03v3 ad=0.2646p pd=2.1u as=0.1092p ps=0.94u w=0.42u l=0.28u
+X15 VDD.t19 a_n359_n5759.t4 Q.t1 VDD.t18 pfet_03v3 ad=0.2822p pd=2.18u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X16 a_n249_n4912# a_n1342_n5730# RSTN.t0 VDD.t5 pfet_03v3 ad=0.2822p pd=2.18u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X17 VSS.t22 a_n359_n5759.t5 a_n912_n3722# VSS.t21 nfet_03v3 ad=0.2646p pd=2.1u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X18 VDD.t4 a_n1342_n5730# a_n1374_n6642# VDD.t3 pfet_03v3 ad=0.2822p pd=2.18u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X19 a_881_n5758# a_n1374_n6642# a_1056_n4015# VSS.t8 nfet_03v3 ad=0.2646p pd=2.1u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X20 VDD.t1 a_n912_n3722# Qb.t0 VDD.t0 pfet_03v3 ad=0.2822p pd=2.18u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X21 VSS.t3 a_n1342_n5730# a_2281_n4424# VSS.t2 nfet_03v3 ad=0.2646p pd=2.1u as=0.1092p ps=0.94u w=0.42u l=0.28u
+X22 VDD.t23 a_n89_n4912# a_n359_n5759.t2 VDD.t22 pfet_03v3 ad=0.2822p pd=2.18u as=0.1092p ps=0.94u w=0.42u l=0.28u
+X23 VDD.t7 a_n1374_n6642# a_2280_n3998# VDD.t6 pfet_03v3 ad=0.2822p pd=2.18u as=0.1092p ps=0.94u w=0.42u l=0.28u
+X24 a_1067_n6116# a_n359_n5759.t6 a_n249_n4912# VDD.t17 pfet_03v3 ad=0.1092p pd=0.94u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X25 a_881_n5758# RSTN.t5 VDD.t27 VDD.t26 pfet_03v3 ad=0.1092p pd=0.94u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X26 VSS.t17 a_n89_n4912# a_1059_n5756# VSS.t16 nfet_03v3 ad=0.2646p pd=2.1u as=0.1092p ps=0.94u w=0.42u l=0.28u
+X27 VDD.t21 a_1056_n4015# RSTN.t2 VDD.t20 pfet_03v3 ad=0.2822p pd=2.18u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X28 a_881_n5758# a_n1342_n5730# a_1056_n4015# VDD.t2 pfet_03v3 ad=0.2822p pd=2.18u as=0.2822p ps=2.18u w=0.42u l=0.28u
+X29 a_1068_n6542# a_n359_n5759.t7 a_n249_n4912# VSS.t23 nfet_03v3 ad=0.1092p pd=0.94u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X30 a_n181_n5757# a_n249_n4912# a_n359_n5759.t0 VSS.t13 nfet_03v3 ad=0.1092p pd=0.94u as=0.2646p ps=2.1u w=0.42u l=0.28u
+X31 VDD.t16 a_n359_n5759.t8 a_n912_n3722# VDD.t15 pfet_03v3 ad=0.2822p pd=2.18u as=0.2822p ps=2.18u w=0.42u l=0.28u
+R0 RSTN.t5 RSTN.n3 72.3487
+R1 RSTN RSTN.t5 24.9493
+R2 RSTN.n3 RSTN.t4 16.9469
+R3 RSTN.n1 RSTN.t1 12.9962
+R4 RSTN.n0 RSTN.t2 12.66
+R5 RSTN.n0 RSTN.t3 12.3135
+R6 RSTN.n1 RSTN.t0 12.0263
+R7 RSTN.n3 RSTN.n2 9.90023
+R8 RSTN.n2 RSTN.n1 0.39464
+R9 RSTN.n2 RSTN.n0 0.156576
+R10 VSS.n23 VSS.n16 749278
+R11 VSS.n16 VSS.t12 91327.6
+R12 VSS.n5 VSS.n3 64653.5
+R13 VSS.n50 VSS.n3 47027.8
+R14 VSS.n13 VSS.n8 11150.5
+R15 VSS.t0 VSS.n46 10656.3
+R16 VSS.n46 VSS.n45 9310.54
+R17 VSS.n6 VSS.n3 9172.39
+R18 VSS.n17 VSS.n8 8859.18
+R19 VSS.n46 VSS.n7 7710.44
+R20 VSS.n43 VSS.n9 6769.51
+R21 VSS.n35 VSS.n34 6625.47
+R22 VSS.n45 VSS.n8 5874.35
+R23 VSS.t6 VSS.n49 4464.13
+R24 VSS.n13 VSS.n11 4354.26
+R25 VSS.n30 VSS.n10 4226.8
+R26 VSS.n29 VSS.n11 4102.23
+R27 VSS.n45 VSS.n44 3676.98
+R28 VSS.n24 VSS.n23 3564.92
+R29 VSS.n44 VSS.t8 2894.81
+R30 VSS.n47 VSS.n7 2588.74
+R31 VSS.t24 VSS.n3 2474.65
+R32 VSS.n49 VSS.n48 2224.45
+R33 VSS.n49 VSS.t10 1774.36
+R34 VSS.n48 VSS.n6 1755.92
+R35 VSS.n22 VSS.n21 1702.15
+R36 VSS.t14 VSS.n24 1689.9
+R37 VSS.n24 VSS.n10 1589.78
+R38 VSS.t10 VSS.n5 1493.57
+R39 VSS.t2 VSS.n15 1430.46
+R40 VSS.n25 VSS.t14 1413.04
+R41 VSS.t20 VSS.n9 1360.03
+R42 VSS.n21 VSS.t8 1205.49
+R43 VSS.t21 VSS.n7 1196.19
+R44 VSS.n48 VSS.n47 1177.13
+R45 VSS.n18 VSS.t16 1172.44
+R46 VSS.n23 VSS.n22 1095.11
+R47 VSS.n25 VSS.n11 1090.87
+R48 VSS.n36 VSS.t18 1070.49
+R49 VSS.n34 VSS.t23 1055.67
+R50 VSS.n42 VSS.t21 992.063
+R51 VSS.n30 VSS.t9 940.115
+R52 VSS.n50 VSS.t6 920.712
+R53 VSS.t12 VSS.t2 915.494
+R54 VSS.n18 VSS.n10 900.433
+R55 VSS.n34 VSS.n33 836.077
+R56 VSS.n36 VSS.n35 822.135
+R57 VSS.n32 VSS.n30 797.649
+R58 VSS.t16 VSS.t20 750.361
+R59 VSS.t18 VSS.t13 685.112
+R60 VSS.n17 VSS.n16 674.74
+R61 VSS.n38 VSS.n7 671.655
+R62 VSS.n43 VSS.n42 615.08
+R63 VSS.n33 VSS.t24 604.99
+R64 VSS.t4 VSS.n32 576.241
+R65 VSS.t9 VSS.n29 492.724
+R66 VSS.n44 VSS.n43 472.2
+R67 VSS.n15 VSS.n13 469.19
+R68 VSS.t13 VSS.n6 466.733
+R69 VSS.n47 VSS.t0 415.238
+R70 VSS.t23 VSS.t4 368.795
+R71 VSS.n35 VSS.n9 317.529
+R72 VSS.n22 VSS.n17 57.864
+R73 VSS.n21 VSS.n20 15.3475
+R74 VSS.n51 VSS.t7 12.5437
+R75 VSS.n37 VSS.t19 12.4687
+R76 VSS.n31 VSS.t5 12.4687
+R77 VSS.n19 VSS.t17 12.4687
+R78 VSS.n26 VSS.t15 12.4687
+R79 VSS.n41 VSS.t22 12.4687
+R80 VSS.n4 VSS.t11 12.4687
+R81 VSS.n1 VSS.t25 12.4687
+R82 VSS.n38 VSS.t1 12.4687
+R83 VSS.n14 VSS.t3 12.4675
+R84 VSS.n29 VSS.n28 11.6695
+R85 VSS.n15 VSS.n14 10.4017
+R86 VSS.n19 VSS.n18 10.4005
+R87 VSS.n26 VSS.n25 10.4005
+R88 VSS.n5 VSS.n4 10.4005
+R89 VSS.n33 VSS.n1 10.4005
+R90 VSS.n51 VSS.n50 10.4005
+R91 VSS.n42 VSS.n41 10.4005
+R92 VSS.n32 VSS.n31 10.4005
+R93 VSS.n37 VSS.n36 10.4005
+R94 VSS.n31 VSS.n0 9.86036
+R95 VSS.n28 VSS.n27 6.42418
+R96 VSS.n20 VSS.n19 6.02652
+R97 VSS.n39 VSS.n38 5.75457
+R98 VSS.n39 VSS.n2 5.48837
+R99 VSS.n41 VSS.n40 5.44665
+R100 VSS.n40 VSS.n37 5.3877
+R101 VSS.n27 VSS.n26 4.66984
+R102 VSS.n14 VSS.n12 4.6547
+R103 VSS.n20 VSS.n12 1.34731
+R104 VSS.n40 VSS.n39 1.2245
+R105 VSS.n27 VSS.n12 1.03428
+R106 VSS.n52 VSS.n2 0.820259
+R107 VSS VSS.n0 0.783577
+R108 VSS.n28 VSS.n0 0.664346
+R109 VSS.n53 VSS.n52 0.652808
+R110 VSS VSS.n53 0.348192
+R111 VSS.n4 VSS.n2 0.323682
+R112 VSS.n53 VSS.n1 0.322765
+R113 VSS.n52 VSS.n51 0.314599
+R114 a_n359_n5759.t8 a_n359_n5759.t5 69.3505
+R115 a_n359_n5759.t4 a_n359_n5759.t3 69.3505
+R116 a_n359_n5759.t6 a_n359_n5759.t7 53.4469
+R117 a_n359_n5759.n2 a_n359_n5759.t6 35.2609
+R118 a_n359_n5759.n1 a_n359_n5759.t8 30.3133
+R119 a_n359_n5759.n2 a_n359_n5759.t4 25.048
+R120 a_n359_n5759.t0 a_n359_n5759.n3 12.3005
+R121 a_n359_n5759.n1 a_n359_n5759.n0 5.78668
+R122 a_n359_n5759.n0 a_n359_n5759.t2 4.33383
+R123 a_n359_n5759.n0 a_n359_n5759.t1 4.33383
+R124 a_n359_n5759.n3 a_n359_n5759.n2 0.519935
+R125 a_n359_n5759.n3 a_n359_n5759.n1 0.494983
+R126 Q Q.t0 12.6202
+R127 Q Q.t1 12.341
+R128 VDD.n8 VDD.t5 715.11
+R129 VDD.n11 VDD.t2 714.49
+R130 VDD.n18 VDD.t3 713.694
+R131 VDD.n14 VDD.t0 713.688
+R132 VDD.n17 VDD.t10 713.688
+R133 VDD.n12 VDD.t22 713.688
+R134 VDD.n16 VDD.t15 713.688
+R135 VDD.n9 VDD.t6 713.688
+R136 VDD.n6 VDD.t20 713.688
+R137 VDD.n0 VDD.t24 713.688
+R138 VDD.n3 VDD.t8 713.688
+R139 VDD.n2 VDD.t18 713.688
+R140 VDD.t22 VDD.t13 434.784
+R141 VDD.t6 VDD.t12 434.784
+R142 VDD.t24 VDD.t26 434.784
+R143 VDD.t8 VDD.t17 434.784
+R144 VDD.n0 VDD.t27 13.7623
+R145 VDD.n13 VDD.t14 12.5331
+R146 VDD.n17 VDD.t11 12.1992
+R147 VDD.n16 VDD.t16 12.1992
+R148 VDD.n6 VDD.t21 12.1992
+R149 VDD.n3 VDD.t9 12.1992
+R150 VDD.n2 VDD.t19 12.1992
+R151 VDD.n14 VDD.t1 12.198
+R152 VDD.n10 VDD.t7 12.1968
+R153 VDD.n18 VDD.t4 12.192
+R154 VDD.n12 VDD.t23 12.1422
+R155 VDD.n1 VDD.t25 12.1411
+R156 VDD.n19 VDD.n18 11.4596
+R157 VDD.n16 VDD.n15 9.90617
+R158 VDD.n4 VDD.n2 7.0573
+R159 VDD.n7 VDD.n5 5.46986
+R160 VDD.n5 VDD.n1 5.05424
+R161 VDD.n4 VDD.n3 5.0066
+R162 VDD.n20 VDD.n19 3.429
+R163 VDD.n11 VDD.n10 1.6793
+R164 VDD.n19 VDD.n17 1.5236
+R165 VDD.n9 VDD.n8 1.27962
+R166 VDD.n13 VDD.n12 1.1387
+R167 VDD VDD.n11 0.864995
+R168 VDD.n5 VDD.n4 0.845079
+R169 VDD.n20 VDD.n16 0.527474
+R170 VDD.n15 VDD.n14 0.516611
+R171 VDD.n15 VDD.n13 0.457423
+R172 VDD.n8 VDD.n7 0.351026
+R173 VDD VDD.n20 0.00545413
+R174 VDD.n10 VDD.n9 0.00286842
+R175 VDD.n7 VDD.n6 0.00168421
+R176 VDD.n1 VDD.n0 0.00153448
+R177 D.t1 D.t0 53.4469
+R178 D D.t1 24.9505
+R179 CLK.t1 CLK.t0 69.3505
+R180 CLK CLK.t1 24.9517
+R181 Qb Qb.t1 12.6395
+R182 Qb Qb.t0 12.3217
+C0 a_n1374_n6642# a_1056_n4015# 0.2678f
+C1 RSTN a_1056_n4015# 0.10365f
+C2 a_n249_n4912# a_n1374_n6642# 0.23084f
+C3 a_n249_n4912# RSTN 0.11019f
+C4 a_n1374_n6642# RSTN 0.22275f
+C5 a_881_n5758# a_n1342_n5730# 0.31376f
+C6 a_881_n5758# VDD 1.18904f
+C7 VDD a_n912_n3722# 0.83176f
+C8 VDD a_n89_n4912# 0.80322f
+C9 VDD a_n1342_n5730# 1.71536f
+C10 a_881_n5758# a_1056_n4015# 0.25267f
+C11 a_881_n5758# a_n249_n4912# 0.19693f
+C12 D VDD 0.18707f
+C13 a_881_n5758# a_n1374_n6642# 0.24946f
+C14 a_881_n5758# RSTN 0.35092f
+C15 a_n89_n4912# a_n249_n4912# 0.28644f
+C16 a_n89_n4912# RSTN 0.29193f
+C17 VDD a_1056_n4015# 0.95856f
+C18 a_n249_n4912# a_n1342_n5730# 0.21283f
+C19 a_n1374_n6642# a_n1342_n5730# 1.67868f
+C20 VDD a_n249_n4912# 0.56511f
+C21 VDD a_n1374_n6642# 1.886f
+C22 VDD RSTN 0.76938f
+C23 VDD CLK 0.28794f
+C24 VDD Qb 0.10704f
+C25 Q VSS 0.25589f
+C26 CLK VSS 0.39888f
+C27 RSTN VSS 1.33038f
+C28 D VSS 0.27844f
+C29 Qb VSS 0.15428f
+C30 VDD VSS 18.83505f
+C31 a_n89_n4912# VSS 1.32962f
+C32 a_n249_n4912# VSS 2.53842f
+C33 a_881_n5758# VSS 0.89126f
+C34 a_1056_n4015# VSS 1.26966f
+C35 a_n1374_n6642# VSS 5.44569f
+C36 a_n1342_n5730# VSS 6.88765f
+C37 a_n912_n3722# VSS 0.62392f
+C38 VDD.n8 VSS 0.11133f
+C39 VDD.n11 VSS 0.13113f
+C40 VDD.n19 VSS 0.21025f
+C41 VDD.n20 VSS 0.10843f
+C42 a_n359_n5759.t8 VSS 0.19196f
+C43 a_n359_n5759.n1 VSS 1.35777f
+C44 a_n359_n5759.t6 VSS 0.11284f
+C45 a_n359_n5759.n2 VSS 0.45569f
+C46 a_n359_n5759.n3 VSS 0.14466f
+.ends
+
+X0 VDD CLK RSTN VSS D Q Qb dff_flat
+"}
+C {lab_wire.sym} -431.25 -0.9375 0 0 {name=p5 sig_type=std_logic lab=D}
+C {lab_wire.sym} -166.25 2.5 0 0 {name=p6 sig_type=std_logic lab=Q}
+C {vsource.sym} -393.75 105.9375 0 0 {name=V4 value=3.3 savecurrent=false}
+C {gnd.sym} -393.75 151.875 0 0 {name=l3 lab=GND}
+C {lab_wire.sym} -323.75 92.5 3 0 {name=p7 sig_type=std_logic lab=VSS}
+C {lab_wire.sym} -323.75 -103.125 3 0 {name=p10 sig_type=std_logic lab=VDD}
+C {capa.sym} -243.75 87.5 0 0 {name=C2
+m=1
+value=25fF
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} -243.75 147.5 0 0 {name=l6 lab=GND}
+C {lab_wire.sym} -243.75 27.5 2 0 {name=p4 sig_type=std_logic lab=Qb}
+C {gnd.sym} -431.25 120 0 0 {name=l7 lab=GND}
+C {vsource.sym} -495.625 35 0 0 {name=V5 value=3.3 savecurrent=false}
+C {lab_wire.sym} -416.25 -31.875 0 0 {name=p2 sig_type=std_logic lab=RSTn}
+C {gnd.sym} -495.625 100 0 0 {name=l9 lab=GND}
+C {lab_wire.sym} -393.75 30.625 0 0 {name=p8 sig_type=std_logic lab=CLK}
+C {code_shown.sym} 158.75 -680.625 0 0 {name=s2 only_toplevel=false value="
+.control
+save all
+
+** Define input signals
+let fsig = 1e3
+let tper = 1/fsig
+let tfr = 0.01*tper
+let ton = 0.5*tper - 2*tfr
+
+let tper2 = 2*tper
+let tfr2  = 2*tfr
+let ton2 = 2*ton
+
+let tper4 = 4*tper
+let tfr4  = 4*tfr
+let ton4 = 4*ton
+
+** Define transient params
+let tstop = 4*tper
+let tstep = 0.001 * tper
+
+** Set source
+alter @v4[DC] = 0.0
+alter @v4[PULSE] = [ 0 3.3 0.3m $&tfr $&tfr $&ton $&tper 0 ]
+
+alter @v3[DC] = 0.0
+alter @v3[PULSE] = [ 0 3.3 0.1m $&tfr2 $&tfr2 $&ton2 $&tper2 0 ]
+
+alter @v5[DC] = 0.0
+alter @v5[PULSE] = [ 3.3 3.3 0 $&tfr4 $&tfr4 $&ton4 $&tper4 0 ]
+
+** Simulations
+op
+dc v3 0 3.3 0.01
+dc v4 0 3.3 0.01
+dc v5 0 3.3 0.01
+tran $&tstep $&tstop
+
+** Save waveform
+write dff_tb.raw
+.endc
+"}
