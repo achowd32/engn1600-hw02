@@ -1,9 +1,9 @@
 ** sch_path: /foss/designs/CAD2/dff.sch
-.subckt dff RSTn D Q Qb CLK vdd vss
-*.PININFO CLK:I RSTn:I Qb:O Q:O D:I vdd:B vss:B
-x1 Dn vdd cbar c vss net1 tgate
+.subckt dff RSTn vdd D Q CHECK vss Qb CLK
+*.PININFO CLK:I RSTn:I Qb:O Q:O D:I vdd:B vss:B CHECK:O
+x1 CHECK vdd cbar c vss net1 tgate
 x4 vdd net1 net2 RSTn vss nand2
-x3 vdd Dn net2 vss inv
+x3 vdd CHECK net2 vss inv
 x5 net2 vdd cbar c vss net5 tgate
 x6 vdd net3 net5 RSTn vss nand2
 x7 vdd c net5 net3 cbar vss tristate
@@ -12,7 +12,7 @@ x9 vdd net3 net4 vss inv
 x10 vdd net4 Qb vss inv
 x11 vdd CLK cbar vss inv
 x12 vdd cbar c vss inv
-x13 vdd c Dn D cbar vss tristate
+x13 vdd c CHECK D cbar vss tristate
 .ends
 
 * expanding   symbol:  tgate.sym # of pins=6
