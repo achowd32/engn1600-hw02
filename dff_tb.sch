@@ -75,10 +75,10 @@ let tstep = 0.001 * tper
 
 ** Set source
 alter @v4[DC] = 0.0
-alter @v4[PULSE] = [ 0 3.3 0.00025 $&tfr $&tfr $&ton $&tper 0 ]
+alter @v4[PULSE] = [ 0 3.3 0 $&tfr $&tfr $&ton $&tper 0 ]
 
 alter @v3[DC] = 0.0
-alter @v3[PULSE] = [ 0 3.3 0 $&tfr2 $&tfr2 $&ton2 $&tper2 0 ]
+alter @v3[PULSE] = [ 0 3.3 2.5e-4 $&tfr2 $&tfr2 $&ton2 $&tper2 0 ]
 
 alter @v5[DC] = 0.0
 alter @v5[PULSE] = [ 0 3.3 0 $&tfr4 $&tfr4 $&ton4 $&tper4 0 ]
