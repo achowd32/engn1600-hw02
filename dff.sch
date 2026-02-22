@@ -80,7 +80,7 @@ N -153.75 -78.75 -153.75 -38.75 {lab=c}
 N -187.5 15 -187.5 75 {lab=vss}
 N -187.5 -75 -187.5 -15 {lab=vdd}
 N -117.5 -0 -90 -0 {lab=CHECK}
-N -30 -0 -30 30 {lab=CHECK}
+N 260 0 260 30 {lab=CHECK}
 C {tgate.sym} 40 -60 0 0 {name=x1}
 C {nand2.sym} 171.25 -190 2 0 {name=x4}
 C {inv.sym} 170 20 0 0 {name=x3}
@@ -134,4 +134,4 @@ C {lab_wire.sym} -187.5 -50 0 0 {name=p45 sig_type=std_logic lab=vdd}
 C {lab_wire.sym} -187.5 48.75 0 0 {name=p46 sig_type=std_logic lab=vss}
 C {iopin.sym} -187.5 -75 3 0 {name=p47 lab=vdd}
 C {iopin.sym} -187.5 75 1 0 {name=p48 lab=vss}
-C {opin.sym} -30 30 1 0 {name=p1 lab=CHECK}
+C {opin.sym} 260 30 1 0 {name=p1 lab=CHECK}
