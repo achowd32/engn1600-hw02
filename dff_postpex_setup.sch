@@ -323,46 +323,58 @@ C {vsource.sym} -495.625 35 0 0 {name=V5 value=3.3 savecurrent=false}
 C {lab_wire.sym} -416.25 -31.875 0 0 {name=p2 sig_type=std_logic lab=RSTn}
 C {gnd.sym} -495.625 100 0 0 {name=l9 lab=GND}
 C {lab_wire.sym} -393.75 30.625 0 0 {name=p8 sig_type=std_logic lab=CLK}
-C {code_shown.sym} 158.75 -680.625 0 0 {name=s2 only_toplevel=false value="
+C {code_shown.sym} 158.75 -880.625 0 0 {name=s2 only_toplevel=false value="
 .control
-save all
+  save all
 
-** Define input signals
-let fsig = 1e8
-let tper = 1/fsig
-let tfr = 0.01*tper
-let ton = 0.5*tper - 2*tfr
+  ** Base timing
+  let fsig = 1e9
+  let tper = 1/fsig
+  let tfr  = 0.01*tper
 
-let tper2 = 2*tper
-let tfr2  = 2*tfr
-let ton2 = 2*ton
+  let tstop = 4.5*tper
+  let tstep = 0.001*tper
 
-let tper4 = 4*tper
-let tfr4  = 4*tfr
-let ton4 = 4*ton
+  ** Rates: D fastest, CLK half, RSTn slowest
+  let tper_clk = tper
+  let tper_d = 2*tper
+  let tper_rst = 4*tper
 
-** Define transient params
-let tstop = 4*tper
-let tstep = 0.001 * tper
+  let ton_d   = 0.5*tper_d   - 2*tfr
+  let ton_clk = 0.5*tper_clk - 2*tfr
 
-** Set source
-alter @v4[DC] = 0.0
-alter @v4[PULSE] = [ 0 3.3 2.5e-9 $&tfr $&tfr $&ton $&tper 0 ]
+  ** Built-in CLK delay
+  let tclk_dly = 0.25*tper_clk
+  ** Reset release: first half low, second half high
+  let trst_release = 2*tper
 
-alter @v3[DC] = 0.0
-alter @v3[PULSE] = [ 0 3.3 0 $&tfr2 $&tfr2 $&ton2 $&tper2 0 ]
+  ** Sweep D delay
+  set kn=40
+  compose tds start=0 stop=\{1e-10\} lin=$kn
+  compose tcq start=0 stop=0 lin=$kn
 
-alter @v5[DC] = 0.0
-alter @v5[PULSE] = [ 0 3.3 0 $&tfr4 $&tfr4 $&ton4 $&tper4 0 ]
+  let i=0
+  while i < $kn
+    reset
+    let td = tds[i] 
+    let td_start = trst_release + td
+    alter @v3[PULSE] = [ 0 3.3 $&td_start $&tfr $&tfr $&ton_d $&tper_d 0 ]
+    alter @v4[PULSE] = [ 0 3.3 $&tclk_dly $&tfr $&tfr $&ton_clk $&tper_clk 3 ]
+    alter @v5[PULSE] = [ 0 3.3 $&trst_release $&tfr $&tfr $&tstop $&tper_rst 0 ]
 
-** Simulations
-op
-dc v3 0 3.3 0.01
-dc v4 0 3.3 0.01
-dc v5 0 3.3 0.01
-tran $&tstep $&tstop
+    tran $&tstep $&tstop
 
-** Save waveform
-write dff_tb.raw
+    meas tran tdelta TRIG v(CLK) VAL=1.65 RISE=1 TARG v(Q) VAL=1.65 RISE=1
+
+    **plot D CLK+5 RSTn+10 Q+15
+    let tcq[i] = $&tdelta
+    let i = i + 1
+  end
+
+  print tds
+  print tcq
+  plot tcq vs tds
+
+  write dff_setup_sweep.raw
 .endc
 "}
